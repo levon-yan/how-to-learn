@@ -1,7 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
 .page {
   min-width: 1100px;
   /* мы ещё не умеем делать мобильную версию сайта, */
@@ -24,45 +20,47 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #f2f2f2;
 }
 
 .logo {
   width: 183px;
   height: 32px;
+  z-index: 2;
 }
+
 .logo_place_header {
-  margin-top: 30px;
-  margin-left: 64px;
+  position: absolute;
+  top: 30px;
+  left: 64px;
 }
 
 .header__title {
+  margin: 0;
   width: 730px;
   margin-left: 64px;
-}
-
-.header__title-text {
+  justify-content: center;
   font-size: 102px;
   line-height: 96px;
   font-weight: bold;
+  z-index: 2;
 }
 
 .header__subtitle {
   width: 388px;
-  margin-left: 64px;
-  margin-bottom: 30px;
-  display: inline;
-}
-
-.header__subtitle-text {
+  margin: 0;
+  position: absolute;
+  bottom: 30px;
+  left: 64px;
   font-size: 18px;
   line-height: 25px;
   font-weight: normal;
   display: inline;
+  z-index: 2;
 }
 
-.header__subtitle_link {
+.header__link {
   font-size: 18px;
   line-height: 25px;
   font-weight: normal;
@@ -71,18 +69,13 @@
   display: inline;
 }
 
-.main-illustration {
+.header__main-illustration {
   width: 765px;
   height: 608px;
   position: absolute;
   right: 0;
   bottom: 0;
   z-index: 1;
-}
-
-.header__image {
-  width: 765px;
-  height: 608px;
 }
 
 /* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
@@ -119,17 +112,14 @@
 
 .two-columns__brief {
   width: 175px;
-}
-
-.two-columns__brief-text {
-  line-height: 1,2;
+  line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
   color: #2f80ed;
-  margin-top: 0;
+  margin: 0;
 }
 
-.main-text {
+.two-columns__main-text {
   width: 80%;
   min-width: 784px;
   display: flex;
@@ -137,25 +127,23 @@
   justify-content: space-between;
 }
 
-.main-text__paragraph {
+.two-columns__paragraph {
   margin: 0;
+  margin-bottom: 30px;
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
 }
 
-.main-text__paragraph-span-accent {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  line-height: 34px;
-  font-size: 24px;
+.two-columns__paragraph:last-child {
+  margin-bottom: 0;
 }
 
-.span-accent {
+.two-columns__span-accent {
   margin-bottom: 30px;
   line-height: 34px;
   font-size: 24px;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .digits {
@@ -170,10 +158,7 @@
 .section-title {
   width: 60%;
   margin: 0 auto 20px;
-}
-
-.section-title__text {
-  line-height: 1,15;
+  line-height: 1.15;
   font-size: 60px;
   font-weight: bold;
   text-align: center;
@@ -182,9 +167,6 @@
 .section-subtitle {
   width: 60%;
   margin: 0 auto;
-}
-
-.section-subtitle__text {
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
@@ -205,22 +187,24 @@
   margin-top: 60px;
 }
 
-.table__cell-heading {
-  line-height: 1,15;
+.table__heading {
+  line-height: 1.15;
+  margin: 0;
   font-size: 24px;
   font-weight: bold;
+  z-index: 2;
 }
 
-.table__cell-text {
-  line-height: 1,2;
+.table__text {
+  line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
-  margin-top: 20px;
+  margin: 20px 0 0 0;
 }
 
 .feynman {
   width: auto;
-  height: 890px;
+  min-height: 890px;
   background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
@@ -232,35 +216,30 @@
   width: 648px;
   margin-top: 100px;
   margin-bottom: 70px;
-  z-index: 1;
-}
-
-.feynman__title-text {
-  line-height: 1,15;
+  line-height: 1.15;
   font-size: 120px;
   font-weight: bold;
   text-align: center;
+  z-index: 1;
 }
 
 .feynman__subtitle {
   line-height: 51px;
+  margin: 0;
   font-size: 36px;
   font-weight: normal;
   z-index: 1;
 }
 
 .feynman__link {
+  text-decoration: none;
+  color: #2f80ed;
   line-height: 51px;
   font-size: 36px;
   font-weight: normal;
   position: absolute;
   top: 50%;
   right: 48px;
-}
-
-.feynman__link_style {
-  color: #2f80ed;
-  text-decoration: none;
 }
 
 .feynman__image {
@@ -281,13 +260,14 @@
   align-items: center;
   position: relative;
   overflow: hidden;
+  z-index: 0;
 }
 
 .section-title_theme_dark {
   color: white;
   margin-top: 90px;
   margin-bottom: 20px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .section-subtitle_theme_dark {
@@ -304,25 +284,22 @@
   color: white;
   margin-right: 0;
   margin-top: 80px;
+  z-index: 2;
+}
+
+.kaufman__triangle {
+  width: 877px;
+  height: 877px;
+  background-image: url("../images/kaufman-triangle.svg");
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  right: -210px;
   z-index: 1;
 }
 
-.triangle {
-  width: 877px;
-  height: 877px;
-  position: absolute;
-  top: 0;
-  right: -210px;
-  z-index: 0;
-}
-
-.triangle__image {
-  width: 877px;
-  height: 877px;
-  z-index: 0;
-}
-
 .footer {
+  display: flex;
   min-height: 350px;
   background-color: #1f1f1f;
   color: white;
@@ -330,21 +307,26 @@
 
 .footer__columns {
   width: 90%;
+  min-height: 250px;
   margin: 60px auto 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.footer__column_content_copyright {
-  flex-basis: 711px;
+.footer__column {
   display: flex;
   flex-direction: column;
+}
+
+.footer__column_content_copyright {
+  flex-basis: 711px;
   justify-content: space-between;
 
 }
 
 .footer__author {
+  margin-top: 18px;
   margin-bottom: 18px;
 }
 
@@ -354,12 +336,11 @@
 }
 
 .footer__column_content_info {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .footer__column-heading {
+  margin: 0;
   line-height: 30px;
   font-size: 18px;
   font-weight: bold;
@@ -369,14 +350,14 @@
 .footer__column-links {
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  margin: 0 0 16px 0;
+  padding: 0;
   list-style-type: none;
 }
 
 .footer__column_content_social {
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
+  padding: 0;
 }
 
 .footer__column-link {
@@ -388,10 +369,10 @@
   text-decoration: none;
 }
 
-.social-icon {
+.footer__social-icon {
   width: 16px;
   height: 16px;
-  margin: 0 10px 0 0;
+  margin: auto 10px auto 0;
 }
 
 .footer__column-link_social-icon {
