@@ -6,3 +6,7 @@
   color: white;
   text-decoration: none;
 }
+
+.footer__column-link:hover {
+  color: #717274;
+}
