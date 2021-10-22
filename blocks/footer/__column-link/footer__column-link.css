@@ -8,5 +8,6 @@
 }
 
 .footer__column-link:hover {
-  color: #717274;
+  opacity: .5;
+  transition: opacity 1s ease;
 }
